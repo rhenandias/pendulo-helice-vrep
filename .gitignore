@@ -1,0 +1,10 @@
+# Ignore pycache folder
+__pycache__
+
+# Ignore VREP dll file
+*.dll
+
+# Ignore vrep API files
+vrep.py
+vrepConst.py
+
