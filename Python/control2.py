@@ -13,9 +13,9 @@ millis = lambda: int(round(time.time() * 1000))
 def add_force_and_torque(shape_handler, force):
 
 	# Função de extensão da API em Python
-	# Uma vez que a API em Python nao possui a função "addForceAndTorque", 
+	# Uma vez que a API em Python nao possui a função "addForceAndTorque",
 	# Se faz necessário construir uma extensão da API
-	# Para documentação: 
+	# Para documentação:
 	# http://www.coppeliarobotics.com/helpFiles/en/remoteApiExtension.htm
 
 	# Realiza chamado de função genérica
@@ -44,7 +44,7 @@ pid.output_limits = (0, 10)
 def control_routine(_setpoint, _time):
 	# Loop de Controle
 	pid.setpoint = _setpoint
-	start = millis()	
+	start = millis()
 	while(millis() - start < _time):
 
 		# Realiza coleta do tempo atual (ms)
@@ -66,7 +66,7 @@ def control_routine(_setpoint, _time):
 		list_time.append(cur_time)
 		list_angle.append(ang)
 		list_setpoint.append(pid.setpoint)
-		
+
 		# Aguarda pelo trigger de modo síncrono da simulação
 		vrep.simxSynchronousTrigger(clientID)
 
